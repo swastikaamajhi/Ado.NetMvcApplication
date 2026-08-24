@@ -1,0 +1,39 @@
+﻿@model List<Ado.NetMvcApplication.Models.LoginModel>
+
+@{
+    ViewBag.Title = "User List";
+}
+
+<h2>Add User</h2>
+
+@using (Html.BeginForm())
+{
+    <label>Username</label>
+    <input type="text" name="Username" />
+    <br />
+
+    <label>Password</label>
+    <input type="password" name="Password" />
+    <br />
+
+    <button type="submit">Save</button>
+}
+
+<hr />
+
+<h2>User List</h2>
+
+<table border="1">
+    <tr>
+        <th>Username</th>
+        <th>Password</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Username</td>
+            <td>@item.Password</td>
+        </tr>
+    }
+</table>
